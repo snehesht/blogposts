@@ -1,1 +1,1 @@
-hello there, I'm [Deepak Muppiri](https://deepak.me/)
+hi there, I'm [Deepak Muppiri](https://deepak.me/)

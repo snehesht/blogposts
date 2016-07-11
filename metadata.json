@@ -3,7 +3,7 @@
 		"title": "Hello World !",
 		"author": "Snehesh",
 		"date": "June 11, 2016  01:15 UTC",
-		"url": "/hello",
+		"url": "hello",
 		"tags" : ["Introduction"],
 		"file_name": "index",
 		"description": "",

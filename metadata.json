@@ -8,15 +8,5 @@
 		"file_name": "index",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper leo ac suscipit pulvinar. Sed ante mauris, iaculis in ultricies sed, faucibus at nibh.",
 		"content": ""
-	},
-	{
-		"title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-		"author": "Snehesh",
-		"date": "June 11, 2016  01:15 UTC",
-		"url": "world",
-		"tags" : ["Introduction","DevOps", "Software Development"],
-		"file_name": "index",
-		"description": "Donec aliquet, elit id placerat facilisis, felis elit feugiat tellus, a tempor dolor tellus quis velit. Aemper sapien turpis, tristique dictum tortor commodo id. Nunc et eros nec quam condimentum pharetra quis ut sem. Nulla facilisi. Vestibulum ipsum odio, tempus eget commodo vel, accumsan vel lectus. ",
-		"content": ""
 	}
 ]

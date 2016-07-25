@@ -5,4 +5,4 @@ I'm Snehesh and this is my blog. I'll be writing about python, web apps, servers
 ~ Snehesh.
 <br/>
 
-P.S If you're wondering about the blog source code, don't worry it's on my github page,[github.com/snehesht/mblog](https://github.com/snehesht/mblog)
+P.S If you're wondering about the blog source code, don't worry it's on my github page, [github.com/snehesht/mblog](https://github.com/snehesht/mblog)

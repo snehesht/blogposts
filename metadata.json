@@ -8,5 +8,16 @@
 		"file": "index",
 		"description": "Just want to share few things about myself, my projects and things I learn.",
 		"content": ""
+	},
+	{
+		"title": "This is a demo.",
+		"author": "Snehesh",
+		"date": "08/03/2016",
+		"url": "demo",
+		"tags" : ["Introduction"],
+		"file": "demo",
+		"description": "Just another demo.",
+		"content": ""
 	}
 ]
+

@@ -8,16 +8,5 @@
 		"file": "index",
 		"description": "Just want to share few things about myself, my projects and things I learn.",
 		"content": ""
-	},
-
-{
-		"title": "Just Another Demo !",
-			"author": "Snehesh",
-				"date": "08/07/2016",
-					"url": "demo",
-						"tags" : ["Demo","Source Code"],
-							"file": "demo",
-								"description": "This is a demo post, for more information check my github repo github.com/snehesht/blog",
-									"content": ""
-}
+	}
 ]

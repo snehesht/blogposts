@@ -45,7 +45,7 @@ nat on $ext_if from $openvpn_subnet to any -> ($ext_if)
 Start pf by default using `sudo sysrc pf=yes`  after system reboot. 
 
 
-
+<br>
 ### Installing DNSCrypt and Unbound
 
 Install dnscrypt-proxy on the FreeBSD ` sudo pkg install dnscrypt-proxy`. Update the `/etc/rc.conf` file so the dnscrypt autostarts after reboots, add the following config to `/etc/rc.conf`. `cs-useast` is the dnscrypt provider is closest to the server location, you can choose one that's closest to you from this [list](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv)
@@ -148,6 +148,7 @@ drill -S freebsd.org
 </pre>
 
 
+<br>
 ### Installing OpenVPN
 
 Install openvpn and easy-rsa by running `sudo pkg install openvpn easy-rsa`. Create a new directory `sudo mkdir /usr/local/etc/openvpn` and copy sample configuration file and easy-rsa files. 
@@ -181,6 +182,8 @@ Edit the `vars` file under `/usr/local/etc/openvpn/easy-rsa` and change the foll
 </pre>
 Now start generating the keys, now run `sudo ./easyrsa.real help` to print the list of commands. Lets start with building PKI
 
+
+<br>
 #### Build Public Key Infrastructure (PKI)
 
 Initialize PKI by running `init-pki`
@@ -335,7 +338,9 @@ Copy the individual keys to the respective client.
     tar czvf desktop.tar.gz pki/ca.crt pki/issued/desktop.crt pki/private/desktop.key
 </pre>
 
-#### Generate OpenVPN server and client config files
+
+<br>
+### Generate OpenVPN server and client config files
 
 Now edit the OpenVPN server configuration file `openvpn.conf`, first change dir to `cd /usr/local/etc/openvpn` and edit the `openvpn.conf` file we copied in the initial steps or simply copy-paste the following configuration
 
@@ -522,3 +527,6 @@ Tip: OpenVPN on android recognized `.ovpn` files, simply replace the `client.con
 Well then, I'm gonna go and play [0 A.D](https://play0ad.com/). 
 
 
+<br>
+<br>
+<br>

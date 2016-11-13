@@ -1,10 +1,10 @@
-# Securing the network
+There are few good choices like OpenVPN, [SoftEther](https://www.softether.org/), [Pritunl](http://pritunl.com) etc. If you prefer something much more robust, I'd suggest to take look at [strongSwan](https://www.strongswan.org) (IPSec + ESP).
 
-### Install VPN Solution
+If you prefer something temporary just use ssh tunnel `ssh -D 9050 user@server` ,  install [proxychains](https://github.com/rofl0r/proxychains-ng) and `proxychains firefox  `, vola you're traffic is encrypted. The only issue is, it's hard use socks proxy on un-rooted mobile phone and sessions are temporary. 
 
-There are few good choices like OpenVPN, SoftEther etc. If you prefer something much more robust, I'd suggest to take look at StrongSwan (IPSec + ESP)
+I choosed OpenVPN since it's widely used VPN solution, most of the OS distributions has somesort of client that supports OpenVPN and it's also easy to configure. However OpenVPN has it's drawbacks, it's easier to detect if a person is using OpenVPN by checking the packet MTU size. 
 
-I choosed OpenVPN since it's widely used VPN solution, most of the OS distributions has somesort of client that supports OpenVPN and it's also easy to configure.  
+
 
 ### Creating FreeBSD server on Azure
 
@@ -12,9 +12,13 @@ Create a new freebsd 10.3 instance on Azure, generate SSH key using the followin
     openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout vpn_server.key -out vpn_server.pem
 Don't forget to change the default username (azureuser) and block all ports except 22 till we configure the VPN server. 
 
+You may wonder why FreeBSD, well see the resource usage on a fully functional vpn server
+
+![](http://i.imgur.com/Fmjcq03.png)
 
 
-### Enable IP packet forwarding 
+
+### Enable IP packet forwarding
 
 Enable IP forwarding on the server by setting `net.inet.ip.forwarding=1` in sysctl.conf file. 
 
@@ -34,12 +38,9 @@ openvpn_subnet="{10.8.0.0/24}"
 # similar to iptables -t nat -a POSTROUTING -s 10.8.0.0/24 -o hn0 -j MASQUERADE
 nat on $ext_if from $openvpn_subnet to any -> ($ext_if)
 
-## FILTER RULES
-pass in log all keep state
-pass out log all keep state
 ```
 
-Enable pf by default using `sudo sysrc pf=yes`
+Start pf by default using `sudo sysrc pf=yes`  after system reboot. 
 
 
 

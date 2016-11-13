@@ -14,7 +14,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout vpn_server.key -out 
 </pre>
 Don't forget to change the default username (azureuser) and block all ports except 22 till we configure the VPN server. 
 
-You may wonder why FreeBSD, well see the resource usage on a fully functional vpn server
+You may wonder why FreeBSD, well here's the resource usage on a fully functional vpn server
 
 ![](https://i.imgur.com/Fmjcq03.png)
 

@@ -10,10 +10,10 @@
 		"content": ""
 	},
 	{
-		"title": "Secure the Network Part #1 - OpenVPN and DNSSEC",
+		"title": "Secure the Network Part #1 - OpenVPN and DNSCrypt",
 		"author": "Snehesh",
 		"date": "11/13/2016",
-		"url": "secure-the-network-part-1-openvpn-and-dnssec",
+		"url": "secure-the-network-part-1-openvpn-and-dnscrypt",
 		"tags" : ["Security, Network, VPN, DNSCrypt"],
 		"file": "secure_vpn_setup",
 		"description": "Secure the Network Part #1 is about using OpenVPN to encrypt network traffic and using DNSSEC to authenticate DNS quiries,so we can avoid network sniffing, DNS spoofing etc. attacks while using unsecured public wifi.",

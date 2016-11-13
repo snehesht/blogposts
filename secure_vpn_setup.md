@@ -24,10 +24,10 @@ You may wonder why FreeBSD, well see the resource usage on a fully functional vp
 
 Enable IP forwarding on the server by setting `net.inet.ip.forwarding=1` in sysctl.conf file. 
 
+<pre>
     sudo sysctl net.inet.ip.forwarding=1
     sudo nano /etc/sysctl.conf
-
-
+</pre>
 
 ### Enable packet filter (pf)
 
@@ -51,11 +51,11 @@ Start pf by default using `sudo sysrc pf=yes`  after system reboot.
 Install dnscrypt-proxy on the FreeBSD ` sudo pkg install dnscrypt-proxy`. Update the `/etc/rc.conf` file so the dnscrypt autostarts after reboots, add the following config to `/etc/rc.conf`. `cs-useast` is the dnscrypt provider is closest to the server location, you can choose one that's closest to you from this [list](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv)
 
 <pre>
-# dnscrypt-proxy
-dnscrypt_proxy_enable="YES"
-dnscrypt_proxy_flags="-a 127.0.0.1:54"
-dnscrypt_proxy_resolver="cs-useast"
-dnscrypt_proxy_logfile="/dev/null"
+    # dnscrypt-proxy
+    dnscrypt_proxy_enable="YES"
+    dnscrypt_proxy_flags="-a 127.0.0.1:54"
+    dnscrypt_proxy_resolver="cs-useast"
+    dnscrypt_proxy_logfile="/dev/null"
 </pre>
 
 Install unbound to act as a local dns cache `sudo pkg install unbound`. Edit the unbound config file ` /var/unbound/unbound.conf` using sudo and add the following configuration
@@ -167,24 +167,17 @@ Edit the `vars` file under `/usr/local/etc/openvpn/easy-rsa` and change the foll
     sudo vi vars
 </pre>
 <pre>
-set_var EASYRSA_REQ_COUNTRY     "US"  # "<COUNTRY>"
-set_var EASYRSA_REQ_PROVINCE    "NY"  # "<PROVINCE>"
-set_var EASYRSA_REQ_CITY        "New York"  # "<CITY>"
-set_var EASYRSA_REQ_ORG         "ORG"  # "<ORGANIZATION>"
-set_var EASYRSA_REQ_EMAIL       "admin@localhost"  # "<EMAIL>"
-set_var EASYRSA_REQ_OU          "VPN Server"  # "<ORGANIZATIONAL UNIT>"
-set_var EASYRSA_REQ_CN          "vpn" # <COMMON_NAME>
-
-# Set Key size to 4096
-set_var EASYRSA_KEY_SIZE        4096
-
-# Set self-signed CA to expire after 10 years
-set_var EASYRSA_CA_EXPIRE       3650
-
-# Set cert to expire after 5 years, don't worry even if you lost the certs or 
-# if they are compromised, you can simply revoke them. 
-
-set_var EASYRSA_CERT_EXPIRE     1825
+    set_var EASYRSA_REQ_COUNTRY     "US"  # "COUNTRY"
+    set_var EASYRSA_REQ_PROVINCE    "NY"  # "PROVINCE"
+    set_var EASYRSA_REQ_CITY        "New York"  # "CITY"
+    set_var EASYRSA_REQ_ORG         "ORG"  # "ORGANIZATION"
+    set_var EASYRSA_REQ_EMAIL       "admin@localhost"  # "EMAIL"
+    set_var EASYRSA_REQ_OU          "VPN Server"  # "ORGANIZATIONAL UNIT"
+    set_var EASYRSA_REQ_CN          "vpn" # COMMON_NAME
+    set_var EASYRSA_KEY_SIZE        4096 # set key size to 4096  
+    set_var EASYRSA_CA_EXPIRE       3650 # Set self-signed CA to expire after 10 years
+    set_var EASYRSA_CERT_EXPIRE     1825 # Set cert to expire after 5 years, don't worry even if you lost 
+                                         # the certs or if they are compromised, you can revoke them.
 </pre>
 Now start generating the keys, now run `sudo ./easyrsa.real help` to print the list of commands. Lets start with building PKI
 
@@ -329,17 +322,17 @@ finally generate Diffie Hellman parameters `dh.pem` using `sudo ./easyrsa.real g
 Create a directory `keys` in `/usr/local/etc/openvpn`, copy the generated keys to `/usr/local/etc/openvpn/keys`.
 <pre>
     cd /usr/local/etc/openvpn/easy-rsa
-    cp pki/dh.pem pki/ca.crt pki/issued/openvpn-server.crt pki/private/openvpn-server.key /usr/local/etc/openvpn/keys
+    cp pki/dh.pem pki/ca.crt pki/issued/openvpn-server.crt \
+        pki/private/openvpn-server.key /usr/local/etc/openvpn/keys
 </pre>
 Copy the individual keys to the respective client. 
 <pre>
-Client Cert: /usr/local/etc/openvpn/easy-rsa/pki/issued/<name>.crt
-Client Key: /usr/local/etc/openvpn/easy-rsa/pki/private/<name>.key
-CA Cert:    /usr/local/etc/openvpn/easy-rsa/pki/ca.crt
-
-# archive the above files for easy distribution. 
-# use scp or rsync to download the archive. 
-tar czvf desktop.tar.gz pki/ca.crt pki/issued/desktop.crt pki/private/desktop.key
+    Client Cert: /usr/local/etc/openvpn/easy-rsa/pki/issued/<name>.crt
+    Client Key: /usr/local/etc/openvpn/easy-rsa/pki/private/<name>.key
+    CA Cert:    /usr/local/etc/openvpn/easy-rsa/pki/ca.crt
+    # archive the above files for easy distribution. 
+    # use scp or rsync to download the archive. 
+    tar czvf desktop.tar.gz pki/ca.crt pki/issued/desktop.crt pki/private/desktop.key
 </pre>
 
 #### Generate OpenVPN server and client config files

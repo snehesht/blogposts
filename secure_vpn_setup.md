@@ -4,8 +4,7 @@ If you prefer something temporary just use ssh tunnel `ssh -D 9050 user@server` 
 
 I choosed OpenVPN since it's widely used VPN solution, most of the OS distributions has somesort of client that supports OpenVPN and it's also easy to configure. However OpenVPN has it's drawbacks, it's easier to detect if a person is using OpenVPN by checking the packet MTU size. 
 
-
-
+<br>
 ### Creating FreeBSD server on Azure
 
 Create a new freebsd 10.3 instance on Azure, generate SSH key using the following command
@@ -19,7 +18,7 @@ You may wonder why FreeBSD, well here's the resource usage on a fully functional
 ![](https://i.imgur.com/Fmjcq03.png)
 
 
-
+<br>
 ### Enable IP packet forwarding
 
 Enable IP forwarding on the server by setting `net.inet.ip.forwarding=1` in sysctl.conf file. 
@@ -29,6 +28,7 @@ Enable IP forwarding on the server by setting `net.inet.ip.forwarding=1` in sysc
     sudo nano /etc/sysctl.conf
 </pre>
 
+<br>
 ### Enable packet filter (pf)
 
 `pf` is the freebsd version of iptables, OpenVPN `10.8.0.0/24` must be routed properly, open `/etc/pf.conf` as root and add the following configuration

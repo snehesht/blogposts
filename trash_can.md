@@ -1,8 +1,13 @@
 
 How many of you deleted the wrong file with the `rm` command ?
 
-Do you frequently delete the wrong file or folder using the `rm` command and spend the next half an hour trying to recover it ? This happened to me just now, I lost about a couple days of work, so I sat down and wrote a simple script to fix this problem. Even if `rm` catastrophes never happened to you, it's best to be prepared, don't you agree. The following script is intended as a simple fix to restore any lost files or directories.
+Deleting a wrong file or folder using the `rm` command and spend the next half an hour trying to recover it, that happens to all of us one time or another. Infact it just happened to me, I lost about a couple days of work at 3 AM, so I sat down and wrote a simple script to fix this problem. Even if `rm` catastrophes never happened to you, it's best to be prepared, don't you agree. The following script is intended as a simple fix to restore any lost files or directories.
 
+**Workflow**
+
+    rm == moves files to ==>>> ~/.trash/$(DATE)/
+    cleantrash ==> deletes the contents of ~/.trash
+    
 #### Script
 
 In your .bashrc or .zshrc add an alias to override rm with the script filename.
@@ -14,6 +19,7 @@ alias rm="/PATH/TO/THE/TRASH/SCRIPT/trash.sh"
 # Alias to clear the trash can i.e ~/.trash
 alias cleantrash="/bin/rm -rf ~/.trash"
 ```
+
 After adding the alias to your bashrc or zshrc files copy paste the following script to the path specified in the `alias rm` and add execute permission to it i.e `chmod +x trash.sh`
 
 ```
@@ -40,18 +46,12 @@ else
     # Create the trash dir if it doesn't exist
     /bin/mkdir -p $TRASH_DIR/$SUB_DIR
 
-    # If there are folder conflicts they are automatically numbered
-    # for example, hello, hello~, hello~1
+    # If there are folder conflicts they are automatically numbered with --backup=numbered, 
+    # but --backup=simple, simply overwrites the existing files
     /bin/mv --backup=simple --suffix="" $@ $CURR_TRASH_DIR
 fi
 
 ```
-#### Workflow
 
-    rm == moves files to ==> ~/.trash/$(DATE)/
-    cleantrash ==> cleans ~/.trash
-
-So whenever the rm command is issued the `trash.sh` script is invoked and moves the specified files or directories to the ~/.trash/$(date) i.e ~/.trash/01072017/. In the future if you accidentally remove a file, you can simply go the folder with the current date in the `~/.trash` folder and recover the deleted files.
-
-
+So whenever the rm command is executed the `trash.sh` script is invoked and moves the specified files or directories to the ~/.trash/$(date) i.e ~/.trash/01082017/. In the future if you accidentally remove a file, you can simply go the folder with the current date in the `~/.trash` folder and recover the deleted files.
 

@@ -1,10 +1,7 @@
-
-How many of you deleted the wrong file with the `rm` command ?
-
 Deleting a wrong file or folder using the `rm` command and spend the next half an hour trying to recover it, that happens to all of us one time or another. Infact it just happened to me, I lost about a couple days of work at 3 AM, so I sat down and wrote a simple script to fix this problem. Even if `rm` catastrophes never happened to you, it's best to be prepared, don't you agree. The following script is intended as a simple fix to restore any lost files or directories.
 
 **Workflow**
-
+    
     rm == moves files to ==>>> ~/.trash/$(DATE)/
 
     cleantrash ==> deletes the contents of ~/.trash

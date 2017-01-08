@@ -18,5 +18,15 @@
 		"file": "secure_vpn_setup",
 		"description": "Secure the Network Part #1 is about using OpenVPN to encrypt network traffic and using DNSSEC to authenticate DNS quiries,so we can avoid network sniffing, DNS spoofing etc. attacks while using unsecured public wifi.",
 		"content": ""
+	},
+	{
+		"title": "Undo /bin/rm with a trash can",
+		"author": "Snehesh",
+		"date": "01/08/2017",
+		"url": "undo-rm-with-a-trash-can",
+		"tags" : ["Utilities", "Workflow"],
+		"file": "trash_can",
+		"description": "Deleting the wrong files with rm and unable to recover them, does this situation sounds familiar, this post is aimed to fix that issue so you can recover the lost files",
+		"content": ""
 	}
 ]

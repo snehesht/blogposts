@@ -8,6 +8,7 @@ Jan 8 2017  : [Adding trash can to /bin/rm](https://github.com/snehesht/blogpost
 **2016**
 
 July 11 2016: [Hello World !](https://github.com/snehesht/blogposts/blob/master/index.md)
+
 Nov 13 2016 : [Secure the Network Part #1 - OpenVPN and DNSCrypt](https://github.com/snehesht/blogposts/blob/master/secure_vpn_setup.md)
 
 

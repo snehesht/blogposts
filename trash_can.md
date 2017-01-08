@@ -12,17 +12,14 @@ Deleting a wrong file or folder using the `rm` command and spend the next half a
 
 In your .bashrc or .zshrc add an alias to override rm with the script filename.
 
-```
-# Overwrite rm with the script
-alias rm="/PATH/TO/THE/TRASH/SCRIPT/trash.sh"
+    # Overwrite rm with the script
+    alias rm="/PATH/TO/THE/TRASH/SCRIPT/trash.sh"
 
-# Alias to clear the trash can i.e ~/.trash
-alias cleantrash="/bin/rm -rf ~/.trash"
-```
+    # Alias to clear the trash can i.e ~/.trash
+    alias cleantrash="/bin/rm -rf ~/.trash"
 
 After adding the alias to your bashrc or zshrc files copy paste the following script to the path specified in the `alias rm` and add execute permission to it i.e `chmod +x trash.sh`
 
-```
     #!/bin/bash
 
     TRASH_DIR=/home/warlock/.trash
@@ -51,7 +48,6 @@ After adding the alias to your bashrc or zshrc files copy paste the following sc
         /bin/mv --backup=simple --suffix="" $@ $CURR_TRASH_DIR
     fi
 
-```
 
 So whenever the rm command is executed the `trash.sh` script is invoked and moves the specified files or directories to the ~/.trash/$(date) i.e ~/.trash/01082017/. In the future if you accidentally remove a file, you can simply go the folder with the current date in the `~/.trash` folder and recover the deleted files.
 

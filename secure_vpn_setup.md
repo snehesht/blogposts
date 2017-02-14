@@ -9,9 +9,7 @@ Create a new freebsd 10.3 instance on Azure, generate SSH key using the followin
 
     openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout vpn_server.key -out vpn_server.pem
 
-Don't forget to change the default username (azureuser) and block all ports except 22 till we configure the VPN server.
-
-You may wonder why FreeBSD, well here's the resource usage on a fully functional vpn server
+Don't forget to change the default username (azureuser) and block all ports except 22 till we configure the VPN server. You may wonder why FreeBSD, well here's the resource usage on a fully functional vpn server
 
 ![](https://i.imgur.com/Fmjcq03.png)
 
@@ -264,9 +262,7 @@ Check the certificate with `sudo ./easyrsa.real show-cert openvpn-server`, it sh
                 X509v3 Key Usage:
                     Digital Signature, Key Encipherment
 
-Once the server certificate is generated, build a client certificate `sudo ./easyrsa.real build-client-full <UNIQUE_NAME_GOES_HERE> nopass`, `nopass` leaves the client key unencrypted, it's upto you if you want to leave it that way.
-
-If you need client certificates for another device, repeat the above step but make sure you use a different name.
+Once the server certificate is generated, build a client certificate `sudo ./easyrsa.real build-client-full <UNIQUE_NAME_GOES_HERE> nopass`, `nopass` leaves the client key unencrypted, it's upto you if you want to leave it that way. If you need client certificates for another device, repeat the above step but make sure you use a different name.
 
     sudo ./easyrsa.real build-client-full desktop nopass
 

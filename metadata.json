@@ -1,32 +1,29 @@
 [
-	{
-		"title": "Hello World !",
-		"author": "Snehesh",
-		"date": "2016-07-11",
-		"url": "hello",
-		"tags" : ["Introduction"],
-		"file": "index",
-		"description": "Just want to share few things about myself, my projects and things I learn.",
-		"content": ""
-	},
-	{
-		"title": "Secure the Network Part #1 - OpenVPN and DNSCrypt",
-		"author": "Snehesh",
-		"date": "2016-11-13",
-		"url": "secure-the-network-part-1-openvpn-and-dnscrypt",
-		"tags" : ["Security", "Network", "VPN", "DNSCrypt"],
-		"file": "secure_vpn_setup",
-		"description": "Secure the Network Part #1 is about using OpenVPN to encrypt network traffic and using DNSSEC to authenticate DNS quiries,so we can avoid network sniffing, DNS spoofing etc. attacks while using unsecured public wifi.",
-		"content": ""
-	},
-	{
-		"title": "Undo rm",
-		"author": "Snehesh",
-		"date": "2017-01-08",
-		"url": "undo-rm-with-a-trash-can",
-		"tags" : ["Utilities", "Workflow"],
-		"file": "trash_can",
-		"description": "Deleting the wrong files with rm and unable to recover them, does this situation sounds familiar, this post is aimed to fix that issue so you can recover the lost files",
-		"content": ""
-	}
+  {
+    "title": "Hello World !",
+    "author": "Snehesh",
+    "date": "2016-07-11",
+    "url": "hello",
+    "tags" : ["Introduction"],
+    "file": "index",
+    "description": "Just want to share few things about myself, my projects and things I learn."
+  },
+  {
+    "title": "Secure the Network Part #1 - OpenVPN and DNSCrypt",
+    "author": "Snehesh",
+    "date": "2016-11-13",
+    "url": "secure-the-network-part-1-openvpn-and-dnscrypt",
+    "tags" : ["Security", "Network", "VPN", "DNSCrypt"],
+    "file": "secure_vpn_setup",
+    "description": "Secure the Network Part #1 is about using OpenVPN to encrypt network traffic and using DNSSEC to authenticate DNS quiries,so we can avoid network sniffing, DNS spoofing etc. attacks while using unsecured public wifi."
+  },
+  {
+    "title": "Undo rm",
+    "author": "Snehesh",
+    "date": "2017-01-08",
+    "url": "undo-rm-with-a-trash-can",
+    "tags" : ["Utilities", "Workflow"],
+    "file": "trash_can",
+    "description": "Deleting the wrong files with rm and unable to recover them, does this situation sounds familiar, this post is aimed to fix that issue so you can recover the lost files"
+  }
 ]

@@ -2,7 +2,7 @@
 	{
 		"title": "Hello World !",
 		"author": "Snehesh",
-		"date": "07/11/2016",
+		"date": "2016-07-11",
 		"url": "hello",
 		"tags" : ["Introduction"],
 		"file": "index",
@@ -12,7 +12,7 @@
 	{
 		"title": "Secure the Network Part #1 - OpenVPN and DNSCrypt",
 		"author": "Snehesh",
-		"date": "11/13/2016",
+		"date": "2016-11-13",
 		"url": "secure-the-network-part-1-openvpn-and-dnscrypt",
 		"tags" : ["Security", "Network", "VPN", "DNSCrypt"],
 		"file": "secure_vpn_setup",
@@ -22,7 +22,7 @@
 	{
 		"title": "Undo rm",
 		"author": "Snehesh",
-		"date": "01/08/2017",
+		"date": "2017-01-08",
 		"url": "undo-rm-with-a-trash-can",
 		"tags" : ["Utilities", "Workflow"],
 		"file": "trash_can",

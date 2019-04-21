@@ -1,0 +1,12 @@
+# Config
+
+title = "Snehesh's Blog"
+
+[author]
+name = "Snehesh"
+fullname = "Snehesh Thalapaneni"
+email = "mail@snehesh.me"
+
+[posts]
+folder = "public"
+
